@@ -52,7 +52,7 @@ function createFlashFromForm() {
   const bgColor = document.getElementById("bgColorInput").value;
   const minLines = Number(document.getElementById("minLinesInput").value) || 1;
   const fontFamily = document.getElementById("fontFamilyInput").value;
-  const fontSize = Number(document.getElementById("fontSizeInput").value) || 46;
+  const fontSize = Number(document.getElementById("fontSizeInput").value) || 20;
   const frequency = Number(document.getElementById("frequencyInput").value) || 6;
   const location = document.getElementById("locationInput").value || "center";
   const align = document.getElementById("alignInput").value || "left";
@@ -82,7 +82,7 @@ function resetForm() {
   document.getElementById("fontColorInput").value = "#ffffff";
   document.getElementById("bgColorInput").value = "#000000";
   document.getElementById("minLinesInput").value = "1";
-  document.getElementById("fontSizeInput").value = "46";
+  document.getElementById("fontSizeInput").value = "20";
   document.getElementById("fontFamilyInput").value = "Segoe UI";
   document.getElementById("frequencyInput").value = "6";
   document.getElementById("locationInput").value = "center";
@@ -167,7 +167,7 @@ function renderOverlay() {
     overlayCard.style.background = "rgba(0, 0, 0, 0.8)";
     overlayCard.style.color = "#ffffff";
     overlayCard.style.fontFamily = "Segoe UI";
-    overlayCard.style.fontSize = "46px";
+    overlayCard.style.fontSize = "20px";
     overlayCard.style.textAlign = "left";
     overlayCard.className = "overlay-card location-center";
     if (overlayStage) {
