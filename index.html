@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>News Flash Overlay Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="control">
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Streaming Overlay</p>
+          <h1>News Flash Control Panel</h1>
+          <p class="subtitle">Create, edit, delete, and telecast animated flash messages for OBS or Prism Live.</p>
+        </div>
+        <div class="hero-actions">
+          <button id="openOverlayBtn" class="secondary">Open Overlay</button>
+          <button id="telecastBtn" class="primary">Start Telecast</button>
+        </div>
+      </header>
+
+      <main class="workspace-grid">
+        <section class="panel editor-panel">
+          <h2>Flash Editor</h2>
+          <form id="flashForm" class="flash-form">
+            <label>
+              Flash Message
+              <textarea id="messageInput" rows="4" placeholder="Enter the news flash text" required></textarea>
+            </label>
+
+            <div class="form-row">
+              <label>
+                Font Color
+                <input id="fontColorInput" type="color" value="#ffffff" />
+              </label>
+              <label>
+                Background Color
+                <input id="bgColorInput" type="color" value="#000000" />
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Minimum Lines
+                <input id="minLinesInput" type="number" min="4" value="4" step="1" />
+              </label>
+              <label>
+                Font Size (px)
+                <input id="fontSizeInput" type="number" min="16" max="120" value="46" step="1" />
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Font Family
+                <select id="fontFamilyInput">
+                  <option value="Arial">Arial</option>
+                  <option value="Segoe UI">Segoe UI</option>
+                  <option value="Georgia">Georgia</option>
+                  <option value="Times New Roman">Times New Roman</option>
+                  <option value="Courier New">Courier New</option>
+                  <option value="Impact">Impact</option>
+                </select>
+              </label>
+              <label>
+                Frequency (sec)
+                <input id="frequencyInput" type="number" min="2" value="6" step="1" />
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="primary">Save Flash</button>
+              <button type="button" id="cancelEditBtn" class="secondary">Cancel</button>
+            </div>
+          </form>
+        </section>
+
+        <section class="panel list-panel">
+          <div class="panel-header">
+            <h2>Flash Library</h2>
+            <span id="statusBadge" class="status-badge">Ready</span>
+          </div>
+          <ul id="flashList" class="flash-list"></ul>
+          <div class="list-actions">
+            <button id="deleteBtn" class="danger">Delete Selected</button>
+            <button id="modifyBtn" class="secondary">Modify Selected</button>
+          </div>
+        </section>
+
+        <section class="panel preview-panel">
+          <h2>Live Preview</h2>
+          <div id="previewBox" class="preview-box"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
