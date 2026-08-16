@@ -8,6 +8,7 @@ const defaultState = {
   telecasting: false,
   timerId: null,
   location: "center",
+  align: "left",
 };
 
 let state = loadState();
@@ -54,6 +55,7 @@ function createFlashFromForm() {
   const fontSize = Number(document.getElementById("fontSizeInput").value) || 46;
   const frequency = Number(document.getElementById("frequencyInput").value) || 6;
   const location = document.getElementById("locationInput").value || "center";
+  const align = document.getElementById("alignInput").value || "left";
 
   if (!message) {
     alert("Please enter a flash message.");
@@ -70,6 +72,7 @@ function createFlashFromForm() {
     fontSize,
     frequency,
     location,
+    align,
   };
 }
 
@@ -83,6 +86,7 @@ function resetForm() {
   document.getElementById("fontFamilyInput").value = "Segoe UI";
   document.getElementById("frequencyInput").value = "6";
   document.getElementById("locationInput").value = "center";
+  document.getElementById("alignInput").value = "left";
 }
 
 function fillForm(flash) {
@@ -95,6 +99,7 @@ function fillForm(flash) {
   document.getElementById("fontSizeInput").value = flash.fontSize;
   document.getElementById("frequencyInput").value = flash.frequency;
   document.getElementById("locationInput").value = flash.location || "center";
+  document.getElementById("alignInput").value = flash.align || "left";
 }
 
 function renderFlashList() {
@@ -143,6 +148,7 @@ function renderPreview() {
   card.style.color = flash.fontColor;
   card.style.fontFamily = flash.fontFamily;
   card.style.fontSize = `${flash.fontSize}px`;
+  card.style.textAlign = flash.align || "left";
   card.innerHTML = `<div class="overlay-text">${displayText}</div>`;
   previewBox.appendChild(card);
 }
@@ -162,6 +168,7 @@ function renderOverlay() {
     overlayCard.style.color = "#ffffff";
     overlayCard.style.fontFamily = "Segoe UI";
     overlayCard.style.fontSize = "46px";
+    overlayCard.style.textAlign = "left";
     overlayCard.className = "overlay-card location-center";
     if (overlayStage) {
       overlayStage.className = "overlay-stage location-center";
@@ -175,6 +182,7 @@ function renderOverlay() {
   overlayCard.style.color = flash.fontColor;
   overlayCard.style.fontFamily = flash.fontFamily;
   overlayCard.style.fontSize = `${flash.fontSize}px`;
+  overlayCard.style.textAlign = flash.align || "left";
   overlayCard.className = `overlay-card location-${flash.location || "center"}`;
   if (overlayStage) {
     overlayStage.className = `overlay-stage location-${flash.location || "center"}`;
