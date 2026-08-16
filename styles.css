@@ -15,6 +15,10 @@ body {
   background: linear-gradient(135deg, #07111f 0%, #111d33 100%);
 }
 
+body[data-page="overlay"] {
+  background: transparent;
+}
+
 button,
 input,
 select,
