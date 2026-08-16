@@ -183,6 +183,12 @@ function renderOverlay() {
 
 function buildDisplayText(flash) {
   const message = flash.message.trim();
+  
+  // If minimum lines is 1, return message as single line
+  if (flash.minLines <= 1) {
+    return message;
+  }
+  
   const chunkSize = Math.max(22, Math.ceil(message.length / Math.max(flash.minLines, 1)));
   const words = message.split(/(\s+)/).filter(Boolean);
   const lines = [];
