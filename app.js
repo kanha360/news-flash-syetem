@@ -7,6 +7,7 @@ const defaultState = {
   currentId: null,
   telecasting: false,
   timerId: null,
+  location: "center",
 };
 
 let state = loadState();
@@ -52,6 +53,7 @@ function createFlashFromForm() {
   const fontFamily = document.getElementById("fontFamilyInput").value;
   const fontSize = Number(document.getElementById("fontSizeInput").value) || 46;
   const frequency = Number(document.getElementById("frequencyInput").value) || 6;
+  const location = document.getElementById("locationInput").value || "center";
 
   if (!message) {
     alert("Please enter a flash message.");
@@ -67,6 +69,7 @@ function createFlashFromForm() {
     fontFamily,
     fontSize,
     frequency,
+    location,
   };
 }
 
@@ -79,6 +82,7 @@ function resetForm() {
   document.getElementById("fontSizeInput").value = "46";
   document.getElementById("fontFamilyInput").value = "Segoe UI";
   document.getElementById("frequencyInput").value = "6";
+  document.getElementById("locationInput").value = "center";
 }
 
 function fillForm(flash) {
@@ -90,6 +94,7 @@ function fillForm(flash) {
   document.getElementById("fontFamilyInput").value = flash.fontFamily;
   document.getElementById("fontSizeInput").value = flash.fontSize;
   document.getElementById("frequencyInput").value = flash.frequency;
+  document.getElementById("locationInput").value = flash.location || "center";
 }
 
 function renderFlashList() {
@@ -133,7 +138,7 @@ function renderPreview() {
   const displayText = buildDisplayText(flash);
   previewBox.innerHTML = "";
   const card = document.createElement("div");
-  card.className = "overlay-card";
+  card.className = `overlay-card location-${flash.location || "center"}`;
   card.style.background = flash.bgColor;
   card.style.color = flash.fontColor;
   card.style.fontFamily = flash.fontFamily;
@@ -145,6 +150,7 @@ function renderPreview() {
 function renderOverlay() {
   const overlayText = document.getElementById("overlayText");
   const overlayCard = document.getElementById("overlayCard");
+  const overlayStage = document.getElementById("overlayStage");
   if (!overlayText || !overlayCard) {
     return;
   }
@@ -156,6 +162,10 @@ function renderOverlay() {
     overlayCard.style.color = "#ffffff";
     overlayCard.style.fontFamily = "Segoe UI";
     overlayCard.style.fontSize = "46px";
+    overlayCard.className = "overlay-card location-center";
+    if (overlayStage) {
+      overlayStage.className = "overlay-stage location-center";
+    }
     return;
   }
 
@@ -165,6 +175,10 @@ function renderOverlay() {
   overlayCard.style.color = flash.fontColor;
   overlayCard.style.fontFamily = flash.fontFamily;
   overlayCard.style.fontSize = `${flash.fontSize}px`;
+  overlayCard.className = `overlay-card location-${flash.location || "center"}`;
+  if (overlayStage) {
+    overlayStage.className = `overlay-stage location-${flash.location || "center"}`;
+  }
 }
 
 function buildDisplayText(flash) {
