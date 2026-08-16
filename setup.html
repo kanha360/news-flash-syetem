@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prism Live Setup - News Flash Overlay</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        padding: 20px;
+        background: linear-gradient(135deg, #07111f 0%, #111d33 100%);
+        color: #f5f7ff;
+        min-height: 100vh;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      h1 {
+        color: #7dd3fc;
+        margin-bottom: 10px;
+      }
+      
+      .subtitle {
+        color: #b9c7e8;
+        margin-bottom: 30px;
+      }
+      
+      .section {
+        background: rgba(6, 15, 31, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 24px;
+        margin-bottom: 20px;
+      }
+      
+      .url-box {
+        background: rgba(56, 189, 248, 0.1);
+        border: 2px solid #38bdf8;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+        font-family: "Courier New", monospace;
+        word-break: break-all;
+      }
+      
+      .url-box.title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #7dd3fc;
+      }
+      
+      .copy-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #38bdf8, #2563eb);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 8px;
+        font-weight: 600;
+      }
+      
+      .copy-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      }
+      
+      .step {
+        margin: 16px 0;
+        padding-left: 24px;
+        border-left: 3px solid #38bdf8;
+      }
+      
+      .step-title {
+        color: #7dd3fc;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+      
+      .links {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      
+      .btn {
+        display: inline-block;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .btn-primary {
+        background: linear-gradient(135deg, #38bdf8, #2563eb);
+        color: white;
+      }
+      
+      .btn-secondary {
+        background: rgba(255, 255, 255, 0.12);
+        color: #f4f7ff;
+      }
+      
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      
+      .success {
+        background: rgba(16, 185, 129, 0.1);
+        border-left: 3px solid #10b981;
+        padding: 12px;
+        border-radius: 4px;
+        margin: 12px 0;
+      }
+      
+      code {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: "Courier New", monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎥 Prism Live Setup Guide</h1>
+      <p class="subtitle">News Flash Overlay System</p>
+      
+      <div class="section">
+        <h2>📌 Overlay URL (Stable)</h2>
+        <p>Use this URL in Prism Live as a browser source:</p>
+        <div class="url-box title">Stable Overlay URL</div>
+        <div class="url-box">https://kanha360.github.io/news-flash-syetem/overlay.html</div>
+        <button class="copy-btn" onclick="copyToClipboard('https://kanha360.github.io/news-flash-syetem/overlay.html')">
+          📋 Copy URL
+        </button>
+      </div>
+      
+      <div class="section">
+        <h2>🚀 Quick Setup (3 Steps)</h2>
+        
+        <div class="step">
+          <div class="step-title">Step 1: Open Prism Live</div>
+          <p>Start your Prism Live Streaming App and create/open a scene.</p>
+        </div>
+        
+        <div class="step">
+          <div class="step-title">Step 2: Add Browser Source</div>
+          <p>
+            Click <code>Add Source</code> → <code>Web Page</code><br>
+            Paste the overlay URL above<br>
+            Set dimensions: <strong>1920 × 1080</strong> (or your stream resolution)
+          </p>
+        </div>
+        
+        <div class="step">
+          <div class="step-title">Step 3: Control & Broadcast</div>
+          <p>
+            Open the Control Panel in your browser: 
+            <a href="https://kanha360.github.io/news-flash-syetem/" target="_blank" style="color: #7dd3fc;">
+              https://kanha360.github.io/news-flash-syetem/
+            </a><br>
+            Create messages, customize settings, and click "Start Telecast"
+          </p>
+        </div>
+        
+        <div class="success">
+          ✓ The overlay will appear in Prism Live and update in real-time!
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2>💡 Tips for Best Results</h2>
+        <ul>
+          <li><strong>Separate Monitor:</strong> Keep the control panel on a different screen</li>
+          <li><strong>Test First:</strong> Preview messages before going live</li>
+          <li><strong>Good Contrast:</strong> Use colors that stand out from your background</li>
+          <li><strong>Strategic Position:</strong> Use "Upper", "Lower", or "Center" positioning</li>
+          <li><strong>Responsive URL:</strong> This URL is stable and won't change</li>
+        </ul>
+      </div>
+      
+      <div class="section">
+        <h2>🎨 Customization</h2>
+        <p>In the Control Panel, you can customize:</p>
+        <ul>
+          <li>📝 Flash Message Text</li>
+          <li>🎨 Font & Background Colors</li>
+          <li>📍 Text Alignment (Left, Center, Right)</li>
+          <li>📺 Overlay Position (Upper, Lower, Center, Full Screen)</li>
+          <li>✍️ Font Family & Size</li>
+          <li>⏱️ Display Duration</li>
+        </ul>
+      </div>
+      
+      <div class="section">
+        <h2>🔗 Important URLs</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.12);">
+            <td style="padding: 8px;"><strong>Control Panel</strong></td>
+            <td style="padding: 8px;"><a href="https://kanha360.github.io/news-flash-syetem/" target="_blank" style="color: #7dd3fc;">Link</a></td>
+          </tr>
+          <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.12);">
+            <td style="padding: 8px;"><strong>Overlay (Prism Live)</strong></td>
+            <td style="padding: 8px;"><a href="https://kanha360.github.io/news-flash-syetem/overlay.html" target="_blank" style="color: #7dd3fc;">Link</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>GitHub Repository</strong></td>
+            <td style="padding: 8px;"><a href="https://github.com/kanha360/news-flash-syetem" target="_blank" style="color: #7dd3fc;">Link</a></td>
+          </tr>
+        </table>
+      </div>
+      
+      <div class="links">
+        <a href="https://kanha360.github.io/news-flash-syetem/" class="btn btn-primary">
+          📊 Go to Control Panel
+        </a>
+        <a href="https://kanha360.github.io/news-flash-syetem/overlay.html" class="btn btn-secondary" target="_blank">
+          📺 Preview Overlay
+        </a>
+      </div>
+    </div>
+    
+    <script>
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("✓ URL copied to clipboard!");
+        }).catch(() => {
+          alert("Failed to copy. Please try again.");
+        });
+      }
+    </script>
+  </body>
+</html>
